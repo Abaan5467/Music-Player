@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cascadia Code', sans-serif, 'Times New Roman', Times, serif;
+    font-variant-ligatures: common-ligatures;
+}   
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.container {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#playlist-heading {
+    display: none;
+}
+
+p {
+    font-size: 20px;
+}
+
+p, #file-input {
+    margin-left: 10px;
+    margin-bottom: 8px;
+}
+
+.playlist {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    align-items: center;
+    
+}
+
+.playlist ul {
+    list-style-type: none;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 97%;
+    padding: 0;
+}
+
+.playlist ul li {
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playlist ul li div {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+audio {
+    width: 100%;
+}
