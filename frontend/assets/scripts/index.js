@@ -2,27 +2,23 @@ let fileInput = document.getElementById('file-input');
 let files = [];
 
 fileInput.addEventListener('change', () => {
-    files = []; // Clear previous files
+    files = [];
 
-    // Clear the playlist before adding new files
     let playlistUl = document.querySelector('.playlist ul');
-    playlistUl.innerHTML = ''; // Remove all existing <li> elements
+    playlistUl.innerHTML = ''; 
 
-    // Iterate over the new files
     for (let i = 0; i < fileInput.files.length; i++) {
         let file = fileInput.files[i];
         let fileType = file.type;
-        console.log(fileType);
 
-        // Only accept mp3 and wav files
-        if (fileType === 'audio/mp3' || fileType === 'audio/wav' || fileType === 'audio/mpeg') {
+        if (fileType === 'audio/mp3' || fileType === 'audio/wav' || fileType === 'audio/mpeg' || fileType === 'audio/x-m4a') {
             files.push({
                 name: file.name,
                 url: URL.createObjectURL(file),
-                type: fileType // Store the type to set it later in the source element
+                type: fileType 
             });
 
-            // Create a new list item for each valid file
+            
             let newLi = document.createElement('li');
             newLi.innerHTML = `<div></div><audio controls><source src="" type="${fileType}"></audio>`;
             playlistUl.appendChild(newLi);
@@ -31,7 +27,6 @@ fileInput.addEventListener('change', () => {
 
     console.log(files);
 
-    // Display the playlist if there are valid files
     if (files.length > 0) {
         document.getElementById('playlist-heading').style.display = 'block';
         document.getElementsByClassName('playlist')[0].style.display = 'block';
@@ -47,12 +42,11 @@ fileInput.addEventListener('change', () => {
             }
         });
 
-        // Adjust the height of the container only if the playlist is taller than the body
         let playlistHeight = document.querySelector('.playlist').offsetHeight;
         let bodyHeight = document.body.offsetHeight;
 
         if (playlistHeight > bodyHeight) {
-            document.querySelector('.container').style.height = `${playlistHeight + 400}px`; // Add some padding if needed
+            document.querySelector('.container').style.height = `${playlistHeight + 400}px`; 
         }
     }
 });
