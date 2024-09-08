@@ -12,5 +12,5 @@ npm install
 
 Then run this command to start the app:
 ```sh
-npm start
+npm run start
 ```
